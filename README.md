@@ -1,21 +1,44 @@
 # Project 3: Spots
 
-### Overview  
+### What is Spots?
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+Spots is the 3rd project through [TripleTen](https://tripleten.com/), a social media website for sharing your favorite Spots from around the world.
+
+The layout of the site can resemble other popular social media platforms like Instagram, constructed using grid.
+
+Spots serves primarily as an intro to responsive design; compatable with mobile, tablet and desktop views.
+
+Currently, Spots only serves front-end, with UX in mind; additional functionality planned for future updates.
+
+### How was it built?
+
+Spots consists of two main sections:
+
+- Header
+
+  - Nested flexbox for positioning simplicity
+  - Media queries for altering layout on smaller devices
+  - Comfortable text cutoff using clamp and text-overflow
+
+- Cards
+  - Grid for positioning the posts
+    - 3x2 (**Width** $\ge$ 1030px)
+    - 2x3 (1029px $\ge$ **Width** $\ge$ 685px)
+    - 1x6 (684px $\ge$ **Width**)
+  - Flexbox for arranging content within the posts
+
+The grid design allows for additional posts (or cards) to be added in the future with minimal adjustments needed.
+
+### Images
+
+![Spots rendered within a 1440px display](./images/spots-app-1440px.png)
+
+![Spots rendered within a 320px display](./images/spots-app-mobile-version.png)
+
+## Spots Dev Logs
+
+Check out this short video demonstration about the site and how it was made [here](#)
+
+### See it for yourself!
+
+You may view the site in action through my GitHub Pages deployment [here](https://o-p-e-n-b-a-l-l.github.io/se_project_spots/).
