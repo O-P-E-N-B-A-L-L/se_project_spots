@@ -31,7 +31,11 @@ The grid design allows for additional posts (or cards) to be added in the future
 
 ### Images
 
+Spots rendered within a 1440px display:
+
 ![Spots rendered within a 1440px display](./images/spots-app-1440px.png)
+
+Spots rendered within a 320px display:
 
 ![Spots rendered within a 320px display](./images/spots-app-mobile-version.png)
 
