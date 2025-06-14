@@ -70,6 +70,7 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1;
   color: #212121;
   opacity: 0.7;
   transition: opacity 0.2s ease;
@@ -79,7 +80,7 @@
   opacity: 1;
 }
 
-.header__button {
+.header__new-post-button {
   background-color: #212121;
   font-size: 1rem;
   color: #fcf5e5;
@@ -94,11 +95,11 @@
   flex-shrink: 0;
 }
 
-.header__button:hover {
+.header__new-post-button:hover {
   opacity: 0.8;
 }
 
-.header__button-icon {
+.header__new-post-button-icon {
   width: 12px;
 }
 
@@ -142,7 +143,7 @@
     font-size: 1rem;
   }
 
-  .header__button {
+  .header__new-post-button {
     width: 100%;
   }
 }
