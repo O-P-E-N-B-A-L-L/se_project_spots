@@ -41,7 +41,7 @@ Spots rendered within a 320px display:
 
 ## Spots Dev Logs
 
-Check out this short video demonstration about the site and how it was made [here](#)
+Check out this short video demonstration about the site and how it was made [here](https://drive.google.com/file/d/1augVytaOpZlriFWEhCsoNoDkEMOR9AYm/view?usp=sharing).
 
 ### See it for yourself!
 
