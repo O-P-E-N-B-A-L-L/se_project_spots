@@ -1,7 +1,19 @@
 .page {
-  width: 100%;
+  max-width: 1440px;
   background-color: #fcf5e5;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
   color: #212121;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__content {
+  /* Keeps the left & right 'padding' consistent for larger screens due to margin, and can shrink for smaller screens if needed. */
+  width: clamp(288px, 88.89%, 1280px);
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  flex: 1;
 }

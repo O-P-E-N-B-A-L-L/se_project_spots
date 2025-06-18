@@ -10,163 +10,129 @@
     <meta name="author" content="Andy Scheffner" />
     <meta name="keywords" content="spots, social media, photos, pictures" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="stylesheet" href="./vendor/fonts.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
-      <section class="menu-bar">
-        <img src="./images/logo.svg" alt="Spots logo" class="menu-bar__logo" />
-      </section>
       <header class="header">
-        <div class="header__avatar-wrapper">
+        <img src="./images/logo.svg" alt="Spots logo" class="header__logo" />
+      </header>
+
+      <main class="page__content">
+        <section class="profile">
           <img
             src="./images/avatar.jpg"
             alt="Avatar image"
-            class="header__avatar-image"
+            class="profile__avatar-image"
           />
-          <div class="header__profile-wrapper">
-            <div class="header__profile-content">
-              <h1 class="header__name">Bessie Coleman</h1>
-              <p class="header__description">Civil Aviator</p>
+          <div class="profile__profile-wrapper">
+            <div class="profile__profile-content">
+              <h1 class="profile__name">Bessie Coleman</h1>
+              <h2 class="profile__description">Civil Aviator</h2>
             </div>
-            <a href="#" class="header__edit-profile-link">
+            <button class="profile__edit-profile-button" type="button">
               <img
                 src="./images/pencil-icon.svg"
                 alt="Edit Profile icon"
-                class="header__edit-profile-icon"
+                class="profile__edit-profile-icon"
               />
               Edit Profile
-            </a>
+            </button>
           </div>
-        </div>
-        <button class="header__new-post-button" type="button">
-          <img
-            src="./images/plus-icon.svg"
-            alt="New post icon"
-            class="header__new-post-button-icon"
-          />
-          New Post
-        </button>
-      </header>
+          <button class="profile__new-post-button" type="button">
+            <img
+              src="./images/plus-icon.svg"
+              alt="New post icon"
+              class="profile__new-post-button-icon"
+            />
+            New Post
+          </button>
+        </section>
 
-      <section class="cards">
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Photo of a mountainous, snow-capped villiage taken from within a building's window"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">Val Thorens</p>
-            <button class="card__like-button" type="button">
+        <section class="cards">
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Photo of a mountainous, snow-capped villiage taken from within a building's window"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Photo of a restaurant front from across the street"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">Restaurant terrace</p>
-            <button class="card__like-button" type="button">
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">Val Thorens</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/2-photo-by-ceiline-from-pexels.jpg"
+                alt="Photo of a restaurant front from across the street"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="Photo of people enjoying breakfast and coffe from an outdoor cafe"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">An outdoor cafe</p>
-            <button class="card__like-button" type="button">
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">Restaurant terrace</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+                alt="Photo of people enjoying breakfast and coffe from an outdoor cafe"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="Photo of a very, very long bridge stretching over top of a forest"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">A very long bridge, over the forest...</p>
-            <button class="card__like-button" type="button">
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">An outdoor cafe</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+                alt="Photo of a very, very long bridge stretching over top of a forest"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Photo of a tunnel with glass walls, while morning light shines through"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">Tunnel with morning light</p>
-            <button class="card__like-button" type="button">
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">
+                A very long bridge, over the forest...
+              </h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+                alt="Photo of a tunnel with glass walls, while morning light shines through"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image-viewport">
-            <img
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Photo of a small cabin home perched upon a snowy mountain"
-              class="card__image"
-            />
-          </div>
-          <div class="card__content">
-            <p class="card__title">Mountain house</p>
-            <button class="card__like-button" type="button">
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">Tunnel with morning light</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__image-viewport">
               <img
-                src="./images/like-icon.svg"
-                alt="Like this post"
-                class="card__like-button-icon"
+                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Photo of a small cabin home perched upon a snowy mountain"
+                class="card__image"
               />
-            </button>
-          </div>
-        </article>
-      </section>
+            </div>
+            <div class="card__content">
+              <h2 class="card__title">Mountain house</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+          </article>
+        </section>
+      </main>
 
       <footer class="footer">
         <p class="footer__copyright">2025 &copy; Andy Scheffner</p>
