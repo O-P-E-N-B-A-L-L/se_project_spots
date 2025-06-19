@@ -51,14 +51,4 @@
     font-size: 1rem;
     line-height: 1;
   }
-
-  /*
-
-  This was added mainly to resize the background image (heart) as shown in the Figma design -- Just commenting this out for the time being!
-
-  .card__like-button {
-    width: 20px;
-    height: 18px;
-  }
-  */
 }
