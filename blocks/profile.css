@@ -56,7 +56,7 @@
 
 .profile__edit-profile-button {
   border: none;
-  background-color: #fcf5e5;
+  background-color: transparent;
   padding: 0;
   width: fit-content;
   display: flex;

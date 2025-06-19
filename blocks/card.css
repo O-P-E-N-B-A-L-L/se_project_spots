@@ -31,7 +31,8 @@
 }
 
 .card__like-button {
-  background: #fcf5e5 url("../images/like-icon.svg") no-repeat center/cover;
+  margin: 12px 0 0;
+  background: transparent url("../images/like-icon.svg") no-repeat center/cover;
   border: none;
   padding: 0;
   opacity: 0.4;
@@ -51,8 +52,13 @@
     line-height: 1;
   }
 
+  /*
+
+  This was added mainly to resize the background image (heart) as shown in the Figma design -- Just commenting this out for the time being!
+
   .card__like-button {
     width: 20px;
     height: 18px;
   }
+  */
 }
