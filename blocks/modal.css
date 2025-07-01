@@ -84,7 +84,7 @@
   max-width: 604px;
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
-  transition: opacity 0.2s ease;
+  transition: border-color 0.2s ease;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1;
@@ -95,7 +95,7 @@
 }
 
 .modal__input:hover {
-  opacity: 1;
+  border-color: #212121;
   cursor: pointer;
 }
 
