@@ -1,29 +1,100 @@
+// --- ---------------------- --- //
+// --- Element Identification --- //
+// --- ---------------------- --- //
+
+// Sections & Modals
 const newPostModal = document.querySelector("#new-post-modal");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editProfileBtn = document.querySelector(".profile__edit-profile-button");
+const profileSection = document.querySelector(".profile");
+
+// Buttons
+const editProfileBtn = profileSection.querySelector(
+  ".profile__edit-profile-button"
+);
 const editProfileCloseBtn = editProfileModal.querySelector(
   ".modal__close-button"
 );
-const newPostBtn = document.querySelector(".profile__new-post-button");
+const editProfileSaveBtn = editProfileModal.querySelector(
+  ".modal__submit-button"
+);
+const newPostBtn = profileSection.querySelector(".profile__new-post-button");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
+const newPostSaveBtn = newPostModal.querySelector(".modal__submit-button");
 
-/*
-  Comment to reviewer:
-  Both methods below serve the same purpose.  Whether that's adding & removing the class, or toggling the class.  Which would you prefer to see?  Of course this would be better off in a standalone function, which leads me to believe toggling is the way to go.  Your thoughts mean the world to me :D
-*/
+// Profile Related Fields
+const profileName = profileSection.querySelector(".profile__name");
+const profileDescription = profileSection.querySelector(
+  ".profile__description"
+);
+const editProfileInputName = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editProfileInputDescription = editProfileModal.querySelector(
+  "#profile-description-input"
+);
 
-editProfileBtn.addEventListener("click", function (event) {
-  editProfileModal.classList.add("modal_is-opened");
+// New Post Fields
+const newPostImageLink = newPostModal.querySelector("#card-image-input");
+const newPostCaption = newPostModal.querySelector("#card-caption-input");
+
+// Forms
+const editProfileForm = editProfileModal.querySelector(".modal__form");
+const newPostForm = newPostModal.querySelector(".modal__form");
+
+// --- --------- --- //
+// --- Functions --- //
+// --- --------- --- //
+
+function toggleModalVisibility(modal) {
+  modal.classList.toggle("modal_is-opened");
+}
+
+function fillProfileInputFields() {
+  editProfileInputName.value = profileName.textContent;
+  editProfileInputDescription.value = profileDescription.textContent;
+}
+
+function setProfileContentFields() {
+  profileName.textContent = editProfileInputName.value;
+  profileDescription.textContent = editProfileInputDescription.value;
+}
+
+function addNewPost() {
+  console.log(
+    `New post using image "${newPostImageLink.value}" with caption "${newPostCaption.value}" was created.`
+  );
+  newPostForm.reset();
+}
+
+// --- --------------- --- //
+// --- Event Listeners --- //
+// --- --------------- --- //
+
+editProfileBtn.addEventListener("click", function () {
+  toggleModalVisibility(editProfileModal);
+  fillProfileInputFields();
 });
 
-editProfileCloseBtn.addEventListener("click", function (event) {
-  editProfileModal.classList.remove("modal_is-opened");
+editProfileCloseBtn.addEventListener("click", function () {
+  toggleModalVisibility(editProfileModal);
 });
 
-newPostBtn.addEventListener("click", function (event) {
-  newPostModal.classList.toggle("modal_is-opened");
+editProfileForm.addEventListener("submit", function (e) {
+  setProfileContentFields();
+  toggleModalVisibility(editProfileModal);
+  e.preventDefault();
 });
 
-newPostCloseBtn.addEventListener("click", function (event) {
-  newPostModal.classList.toggle("modal_is-opened");
+newPostBtn.addEventListener("click", function () {
+  toggleModalVisibility(newPostModal);
+});
+
+newPostCloseBtn.addEventListener("click", function () {
+  toggleModalVisibility(newPostModal);
+});
+
+newPostForm.addEventListener("submit", function (e) {
+  addNewPost();
+  toggleModalVisibility(newPostModal);
+  e.preventDefault();
 });
