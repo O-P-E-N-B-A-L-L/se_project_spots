@@ -1,6 +1,6 @@
 # Project 3: Spots
 
-### What is Spots?
+## What is Spots?
 
 Spots is the 3rd project through [TripleTen](https://tripleten.com/), a social media website for sharing your favorite Spots from around the world.
 

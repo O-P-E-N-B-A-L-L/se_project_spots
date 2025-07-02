@@ -1,3 +1,13 @@
+// --- ----------- --- //
+// --- Bug Tracker --- //
+// --- ----------- --- //
+/*
+
+  1. New Post Form Submission:
+    a. The form can submit empty url's without throwing errors.
+       This will result in the logging of 'New post using image "" with caption "caption" was created.'
+
+*/
 // --- ---------------------- --- //
 // --- Element Identification --- //
 // --- ---------------------- --- //
@@ -14,12 +24,8 @@ const editProfileBtn = profileSection.querySelector(
 const editProfileCloseBtn = editProfileModal.querySelector(
   ".modal__close-button"
 );
-const editProfileSaveBtn = editProfileModal.querySelector(
-  ".modal__submit-button"
-);
 const newPostBtn = profileSection.querySelector(".profile__new-post-button");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
-const newPostSaveBtn = newPostModal.querySelector(".modal__submit-button");
 
 // Profile Related Fields
 const profileName = profileSection.querySelector(".profile__name");
@@ -41,9 +47,9 @@ const newPostCaption = newPostModal.querySelector("#card-caption-input");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
-// --- --------- --- //
-// --- Functions --- //
-// --- --------- --- //
+// --- -------------------- --- //
+// --- Function Definitions --- //
+// --- -------------------- --- //
 
 function toggleModalVisibility(modal) {
   modal.classList.toggle("modal_is-opened");
@@ -80,9 +86,9 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 editProfileForm.addEventListener("submit", function (e) {
+  e.preventDefault();
   setProfileContentFields();
   toggleModalVisibility(editProfileModal);
-  e.preventDefault();
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -94,7 +100,7 @@ newPostCloseBtn.addEventListener("click", function () {
 });
 
 newPostForm.addEventListener("submit", function (e) {
+  e.preventDefault();
   addNewPost();
   toggleModalVisibility(newPostModal);
-  e.preventDefault();
 });
