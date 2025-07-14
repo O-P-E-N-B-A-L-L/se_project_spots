@@ -140,6 +140,6 @@ newPostForm.addEventListener("submit", (e) => {
 // --- Load Posts --- //
 // --- ---------- --- //
 
-initialCards.forEach((card, index) => {
+initialCards.forEach((card) => {
   console.log(`Array item loaded: "${card.name}".`);
 });
