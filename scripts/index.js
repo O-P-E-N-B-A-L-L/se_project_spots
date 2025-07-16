@@ -82,9 +82,17 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 // --- Function Definitions --- //
 // --- -------------------- --- //
 
-function toggleModalVisibility(modal) {
-  modal.classList.toggle("modal_is-opened");
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
 }
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+// function toggleModalVisibility(modal) {
+//   modal.classList.toggle("modal_is-opened");
+// }
 
 function fillProfileInputFields() {
   editProfileInputName.value = profileName.textContent;
@@ -108,32 +116,32 @@ function addNewPost() {
 // --- --------------- --- //
 
 editProfileBtn.addEventListener("click", () => {
-  toggleModalVisibility(editProfileModal);
+  openModal(editProfileModal);
   fillProfileInputFields();
 });
 
 editProfileCloseBtn.addEventListener("click", () => {
-  toggleModalVisibility(editProfileModal);
+  closeModal(editProfileModal);
 });
 
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   setProfileContentFields();
-  toggleModalVisibility(editProfileModal);
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", () => {
-  toggleModalVisibility(newPostModal);
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", () => {
-  toggleModalVisibility(newPostModal);
+  closeModal(newPostModal);
 });
 
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewPost();
-  toggleModalVisibility(newPostModal);
+  closeModal(newPostModal);
 });
 
 // --- ---------- --- //
