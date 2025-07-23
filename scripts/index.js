@@ -1,13 +1,3 @@
-// --- ----------- --- //
-// --- Bug Tracker --- //
-// --- ----------- --- //
-/*
-
-  1. New Post Form Submission:
-    a. The form can submit empty url's without throwing errors.
-       This will result in the logging of 'New post using image "" with caption "caption" was created.'
-
-*/
 // --- --------------- --- //
 // --- Local Variables --- //
 // --- --------------- --- //
@@ -78,6 +68,10 @@ const newPostCaption = newPostModal.querySelector("#card-caption-input");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
+// Card Template & Container
+const cardTemplate = document.querySelector("#card-template").content;
+const cardContainer = document.querySelector(".cards");
+
 // --- -------------------- --- //
 // --- Function Definitions --- //
 // --- -------------------- --- //
@@ -90,10 +84,6 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-// function toggleModalVisibility(modal) {
-//   modal.classList.toggle("modal_is-opened");
-// }
-
 function fillProfileInputFields() {
   editProfileInputName.value = profileName.textContent;
   editProfileInputDescription.value = profileDescription.textContent;
@@ -104,10 +94,24 @@ function setProfileContentFields() {
   profileDescription.textContent = editProfileInputDescription.value;
 }
 
+function getCardElement(data) {
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+  return cardElement;
+}
+
 function addNewPost() {
-  console.log(
-    `New post using image "${newPostImageLink.value}" with caption "${newPostCaption.value}" was created.`
-  );
+  const cardElement = getCardElement({
+    name: newPostCaption.value,
+    link: newPostImageLink.value,
+  });
+  cardContainer.prepend(cardElement);
   newPostForm.reset();
 }
 
@@ -149,5 +153,6 @@ newPostForm.addEventListener("submit", (e) => {
 // --- ---------- --- //
 
 initialCards.forEach((card) => {
-  console.log(`Array item loaded: "${card.name}".`);
+  const cardElement = getCardElement(card);
+  cardContainer.prepend(cardElement);
 });
