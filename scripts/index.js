@@ -1,27 +1,31 @@
 const initialCards = [
   {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
     name: "Tunnel with morning light",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
   {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
 
@@ -34,6 +38,7 @@ const profileSection = document.querySelector(".profile");
 const cardsSection = document.querySelector(".cards");
 const newPostModal = document.querySelector("#new-post-modal");
 const editProfileModal = document.querySelector("#edit-profile-modal");
+const imageCanvasModal = document.querySelector("#image-canvas-modal");
 
 // Buttons
 const editProfileBtn = profileSection.querySelector(
@@ -44,6 +49,9 @@ const editProfileCloseBtn = editProfileModal.querySelector(
 );
 const newPostBtn = profileSection.querySelector(".profile__new-post-button");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
+const imageCanvasCloseBtn = imageCanvasModal.querySelector(
+  ".modal__close-button"
+);
 
 // Profile Related Fields
 const profileName = profileSection.querySelector(".profile__name");
@@ -67,6 +75,10 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 
 // Card Template
 const cardTemplate = document.querySelector("#card-template").content;
+const imageCanvas = imageCanvasModal.querySelector(".modal__image");
+const imageCanvasCaption = imageCanvasModal.querySelector(
+  ".modal__image-caption"
+);
 
 // --- -------------------- --- //
 // --- Function Definitions --- //
@@ -108,6 +120,13 @@ function getCardElement(data) {
 
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove();
+  });
+
+  cardImage.addEventListener("click", () => {
+    imageCanvas.src = data.link;
+    imageCanvas.alt = data.name;
+    imageCanvasCaption.textContent = data.name;
+    openModal(imageCanvasModal);
   });
 
   return cardElement;
@@ -153,6 +172,10 @@ newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewPost();
   closeModal(newPostModal);
+});
+
+imageCanvasCloseBtn.addEventListener("click", () => {
+  closeModal(imageCanvasModal);
 });
 
 // --- ---------- --- //
