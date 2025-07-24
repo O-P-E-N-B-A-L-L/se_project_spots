@@ -187,7 +187,7 @@
   }
 
   .modal__close-button_theme_light {
-    top: -48px;
+    top: -48px; /* {height of button = 40px} + {button offset from container = 8px} */
     right: 0;
   }
 }
