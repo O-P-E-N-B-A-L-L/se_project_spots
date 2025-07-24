@@ -1,7 +1,3 @@
-// --- --------------- --- //
-// --- Local Variables --- //
-// --- --------------- --- //
-
 const initialCards = [
   {
     name: "Val Thorens",
@@ -34,9 +30,10 @@ const initialCards = [
 // --- ---------------------- --- //
 
 // Sections & Modals
+const profileSection = document.querySelector(".profile");
+const cardsSection = document.querySelector(".cards");
 const newPostModal = document.querySelector("#new-post-modal");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const profileSection = document.querySelector(".profile");
 
 // Buttons
 const editProfileBtn = profileSection.querySelector(
@@ -68,9 +65,8 @@ const newPostCaption = newPostModal.querySelector("#card-caption-input");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
-// Card Template & Container
+// Card Template
 const cardTemplate = document.querySelector("#card-template").content;
-const cardContainer = document.querySelector(".cards");
 
 // --- -------------------- --- //
 // --- Function Definitions --- //
@@ -98,10 +94,21 @@ function getCardElement(data) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
+
   cardTitle.textContent = data.name;
+
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-button_liked");
+  });
+
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   return cardElement;
 }
@@ -111,7 +118,7 @@ function addNewPost() {
     name: newPostCaption.value,
     link: newPostImageLink.value,
   });
-  cardContainer.prepend(cardElement);
+  cardsSection.prepend(cardElement);
   newPostForm.reset();
 }
 
@@ -154,5 +161,5 @@ newPostForm.addEventListener("submit", (e) => {
 
 initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
-  cardContainer.prepend(cardElement);
+  cardsSection.prepend(cardElement);
 });

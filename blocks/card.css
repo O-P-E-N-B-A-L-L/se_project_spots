@@ -6,6 +6,7 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 8px;
+  position: relative;
 }
 
 .card__image {
@@ -43,6 +44,35 @@
 
 .card__like-button:hover {
   opacity: 1;
+  cursor: pointer;
+}
+
+.card__like-button_liked {
+  background: transparent url("../images/like-icon-liked.svg") no-repeat
+    center/cover;
+  opacity: 1;
+}
+
+.card__like-button_liked:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent url("../images/delete-icon.svg") no-repeat
+    center/cover;
+  border: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  transition: background-image 0.2s linear;
+}
+
+.card__delete-button:hover {
+  background-image: url("../images/delete-icon-hover.svg");
   cursor: pointer;
 }
 
