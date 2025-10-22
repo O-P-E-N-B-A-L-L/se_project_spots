@@ -40,18 +40,9 @@ const newPostModal = document.querySelector("#new-post-modal");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const imageCanvasModal = document.querySelector("#image-canvas-modal");
 
-// Buttons
-const editProfileBtn = profileSection.querySelector(
-  ".profile__edit-profile-button"
-);
-const editProfileCloseBtn = editProfileModal.querySelector(
-  ".modal__close-button"
-);
-const newPostBtn = profileSection.querySelector(".profile__new-post-button");
-const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
-const imageCanvasCloseBtn = imageCanvasModal.querySelector(
-  ".modal__close-button"
-);
+// Forms
+const editProfileForm = editProfileModal.querySelector(".modal__form");
+const newPostForm = newPostModal.querySelector(".modal__form");
 
 // Profile Related Fields
 const profileName = profileSection.querySelector(".profile__name");
@@ -69,9 +60,22 @@ const editProfileInputDescription = editProfileModal.querySelector(
 const newPostImageLink = newPostModal.querySelector("#card-image-input");
 const newPostCaption = newPostModal.querySelector("#card-caption-input");
 
-// Forms
-const editProfileForm = editProfileModal.querySelector(".modal__form");
-const newPostForm = newPostModal.querySelector(".modal__form");
+// Buttons
+const editProfileBtn = profileSection.querySelector(
+  ".profile__edit-profile-button"
+);
+const editProfileCloseBtn = editProfileModal.querySelector(
+  ".modal__close-button"
+);
+const editProfileSubmitBtn = editProfileForm.querySelector(
+  ".modal__submit-button"
+);
+const newPostBtn = profileSection.querySelector(".profile__new-post-button");
+const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-button");
+const imageCanvasCloseBtn = imageCanvasModal.querySelector(
+  ".modal__close-button"
+);
 
 // Card Template
 const cardTemplate = document.querySelector("#card-template").content;
@@ -80,9 +84,9 @@ const imageCanvasCaption = imageCanvasModal.querySelector(
   ".modal__image-caption"
 );
 
-// --- -------------------- --- //
-// --- Function Definitions --- //
-// --- -------------------- --- //
+// --- --------- --- //
+// --- Functions --- //
+// --- --------- --- //
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -138,6 +142,7 @@ function addNewPost() {
     link: newPostImageLink.value,
   });
   cardsSection.prepend(cardElement);
+  disableButtonState(newPostSubmitBtn, settings);
   newPostForm.reset();
 }
 
@@ -146,17 +151,22 @@ function addNewPost() {
 // --- --------------- --- //
 
 editProfileBtn.addEventListener("click", () => {
-  openModal(editProfileModal);
   fillProfileInputFields();
+  resetValidation(editProfileForm, [
+    editProfileInputName,
+    editProfileInputDescription,
+  ]);
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-editProfileForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+editProfileForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
   setProfileContentFields();
+  disableButtonState(editProfileSubmitBtn, settings);
   closeModal(editProfileModal);
 });
 
@@ -168,8 +178,8 @@ newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-newPostForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+newPostForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
   addNewPost();
   closeModal(newPostModal);
 });
