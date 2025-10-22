@@ -152,10 +152,11 @@ function addNewPost() {
 
 editProfileBtn.addEventListener("click", () => {
   fillProfileInputFields();
-  resetValidation(editProfileForm, [
-    editProfileInputName,
-    editProfileInputDescription,
-  ]);
+  resetValidation(
+    editProfileForm,
+    [editProfileInputName, editProfileInputDescription],
+    settings
+  );
   openModal(editProfileModal);
 });
 
