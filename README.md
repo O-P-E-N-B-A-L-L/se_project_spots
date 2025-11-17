@@ -41,7 +41,9 @@ Spots rendered within a 320px display:
 
 ## Spots Dev Logs
 
-Check out this short product pitch about the site and how it was made [here](https://drive.google.com/file/d/1S-zPKiIMQnuAg7edv9JqngniYKTdVXH1/view?usp=drive_link).
+Check out this short [video demonstration](https://drive.google.com/file/d/1augVytaOpZlriFWEhCsoNoDkEMOR9AYm/view?usp=sharing) about the site and how it was made.
+
+Linked is my short [product pitch](https://drive.google.com/file/d/1S-zPKiIMQnuAg7edv9JqngniYKTdVXH1/view?usp=drive_link) for Spots, as well as some of the challenges I personally faced and how I was able to overcome them.
 
 ### See it for yourself!
 
