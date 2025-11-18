@@ -90,16 +90,12 @@ const imageCanvasCaption = imageCanvasModal.querySelector(
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  document.addEventListener("keydown", (evt) => {
-    handleEscapePress(evt, modal);
-  });
+  document.addEventListener("keydown", modal.closeOnEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", (evt) => {
-    handleEscapePress(evt, modal);
-  });
+  document.removeEventListener("keydown", modal.closeOnEscape);
 }
 
 function fillProfileInputFields() {
@@ -152,25 +148,26 @@ function addNewPost() {
   newPostForm.reset();
 }
 
-// Modal Factory Function
+// Modal Factory Function (event listener)
 const setModalListeners = (modal) => {
   // Close button
   modal.querySelector(".modal__close-button").addEventListener("click", () => {
     closeModal(modal);
   });
 
-  // User clicks off of the modal
+  // User clicks off of the modal (event listener)
   modal.addEventListener("click", (evt) => {
     if (evt.target === modal) {
       closeModal(modal);
     }
   });
-};
 
-const handleEscapePress = (evt, modal) => {
-  if (evt.key === "Escape" && modal) {
-    closeModal(modal);
-  }
+  // User hits the Escape key (function as a property)
+  modal.closeOnEscape = (evt) => {
+    if (evt.key === "Escape") {
+      closeModal(modal);
+    }
+  };
 };
 
 // --- --------------- --- //
