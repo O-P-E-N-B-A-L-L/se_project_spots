@@ -148,9 +148,9 @@ function addNewPost() {
   newPostForm.reset();
 }
 
-// Modal Factory Function (event listener)
+// Modal Factory Function
 const setModalListeners = (modal) => {
-  // Close button
+  // User clicks on the close button (event listener)
   modal.querySelector(".modal__close-button").addEventListener("click", () => {
     closeModal(modal);
   });
