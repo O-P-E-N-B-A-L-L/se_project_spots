@@ -47,4 +47,4 @@ Linked is my short [product pitch](https://drive.google.com/file/d/1S-zPKiIMQnuA
 
 ### See it for yourself!
 
-You may view the site in action through my GitHub Pages deployment [here](https://o-p-e-n-b-a-l-l.github.io/se_project_spots/).
+You may view the site in action through my [GitHub Pages deployment](https://o-p-e-n-b-a-l-l.github.io/se_project_spots/).
