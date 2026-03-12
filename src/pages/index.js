@@ -1,3 +1,11 @@
+import {
+  settings,
+  disableButtonState,
+  enableValidation,
+  resetValidation,
+} from "../scripts/validation.js";
+import "./index.css";
+
 const initialCards = [
   {
     name: "Mountain house",
@@ -47,13 +55,13 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 // Profile Related Fields
 const profileName = profileSection.querySelector(".profile__name");
 const profileDescription = profileSection.querySelector(
-  ".profile__description"
+  ".profile__description",
 );
 const editProfileInputName = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 const editProfileInputDescription = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 // New Post Fields
@@ -62,26 +70,26 @@ const newPostCaption = newPostModal.querySelector("#card-caption-input");
 
 // Buttons
 const editProfileBtn = profileSection.querySelector(
-  ".profile__edit-profile-button"
+  ".profile__edit-profile-button",
 );
 const editProfileCloseBtn = editProfileModal.querySelector(
-  ".modal__close-button"
+  ".modal__close-button",
 );
 const editProfileSubmitBtn = editProfileForm.querySelector(
-  ".modal__submit-button"
+  ".modal__submit-button",
 );
 const newPostBtn = profileSection.querySelector(".profile__new-post-button");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
 const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-button");
 const imageCanvasCloseBtn = imageCanvasModal.querySelector(
-  ".modal__close-button"
+  ".modal__close-button",
 );
 
 // Card Template
 const cardTemplate = document.querySelector("#card-template").content;
 const imageCanvas = imageCanvasModal.querySelector(".modal__image");
 const imageCanvasCaption = imageCanvasModal.querySelector(
-  ".modal__image-caption"
+  ".modal__image-caption",
 );
 
 // --- --------- --- //
@@ -150,19 +158,19 @@ function addNewPost() {
 
 // Modal Factory Function
 const setModalListeners = (modal) => {
-  // User clicks on the close button (event listener)
+  // User clicks on the close button
   modal.querySelector(".modal__close-button").addEventListener("click", () => {
     closeModal(modal);
   });
 
-  // User clicks off of the modal (event listener)
+  // User clicks off of the modal
   modal.addEventListener("click", (evt) => {
     if (evt.target === modal) {
       closeModal(modal);
     }
   });
 
-  // User hits the Escape key (function as a property)
+  // User hits the Escape key
   modal.closeOnEscape = (evt) => {
     if (evt.key === "Escape") {
       closeModal(modal);
@@ -179,7 +187,7 @@ editProfileBtn.addEventListener("click", () => {
   resetValidation(
     editProfileForm,
     [editProfileInputName, editProfileInputDescription],
-    settings
+    settings,
   );
   openModal(editProfileModal);
 });
@@ -215,3 +223,5 @@ initialCards.forEach((card) => {
 document.querySelectorAll(".modal").forEach((modal) => {
   setModalListeners(modal);
 });
+
+enableValidation(settings);

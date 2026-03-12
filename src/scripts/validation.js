@@ -9,7 +9,7 @@ const settings = {
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMessageElement = formElement.querySelector(
-    `#${inputElement.id}-error`
+    `#${inputElement.id}-error`,
   );
   inputElement.classList.add(config.inputErrorClass);
   errorMessageElement.textContent = errorMessage;
@@ -17,7 +17,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
 
 const hideInputError = (formElement, inputElement, config) => {
   const errorMessageElement = formElement.querySelector(
-    `#${inputElement.id}-error`
+    `#${inputElement.id}-error`,
   );
   inputElement.classList.remove(config.inputErrorClass);
   errorMessageElement.textContent = "";
@@ -59,7 +59,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
       formElement,
       inputElement,
       inputElement.validationMessage,
-      config
+      config,
     );
   } else {
     hideInputError(formElement, inputElement, config);
@@ -68,7 +68,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
 
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
+    formElement.querySelectorAll(config.inputSelector),
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
@@ -89,4 +89,4 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+export { settings, disableButtonState, enableValidation, resetValidation };
