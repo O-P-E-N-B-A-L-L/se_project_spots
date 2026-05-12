@@ -16,7 +16,7 @@
 }
 
 .card__image:hover {
-  cursor: zoom-in; /* debating whether or not to keep this */
+  cursor: zoom-in;
 }
 
 .card__content {
@@ -35,7 +35,7 @@
   flex: 1;
 }
 
-.card__like-button {
+.card__button--like {
   margin: 12px 0 0;
   background: transparent url("../images/like-icon.svg") no-repeat center/cover;
   border: none;
@@ -46,23 +46,23 @@
   transition: opacity 0.2s ease;
 }
 
-.card__like-button:hover {
+.card__button--like:hover {
   opacity: 1;
   cursor: pointer;
 }
 
-.card__like-button_liked {
+.card__button--liked {
   background: transparent url("../images/like-icon-liked.svg") no-repeat
     center/cover;
   opacity: 1;
 }
 
-.card__like-button_liked:hover {
+.card__button--liked:hover {
   opacity: 0.4;
   cursor: pointer;
 }
 
-.card__delete-button {
+.card__button--delete {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -75,7 +75,7 @@
   transition: background-image 0.2s linear;
 }
 
-.card__delete-button:hover {
+.card__button--delete:hover {
   background-image: url("../images/delete-icon-hover.svg");
   cursor: pointer;
 }
