@@ -12,7 +12,6 @@ import {
 // --- Element Selection --- //
 // --- ----------------- --- //
 
-// prettier-ignore-start
 // Sections & Modals
 const profileSection = document.querySelector(".profile");
 const cardsSection = document.querySelector(".cards");
@@ -72,7 +71,6 @@ const imageCanvas = imageCanvasModal.querySelector(".modal__image");
 const imageCanvasCaption = imageCanvasModal.querySelector(
   ".modal__image-caption",
 );
-// prettier-ignore-end
 
 // Card Tracking
 let selectedCard;
