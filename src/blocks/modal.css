@@ -75,16 +75,27 @@
   line-height: 1;
 }
 
-.modal__form {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.modal__title--small {
+  font-size: 1.5rem;
 }
 
-.modal__content {
+.modal__title--center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal__form {
   display: flex;
+}
+
+.modal__form--horizontal {
   justify-content: center;
   gap: 20px;
+}
+
+.modal__form--vertical {
+  flex-direction: column;
+  gap: 32px;
 }
 
 .modal__label {
@@ -222,11 +233,6 @@
     line-height: 1.2;
   }
 
-  .modal__title--small {
-    margin: 0 auto;
-    text-align: center;
-  }
-
   .modal__input {
     font-size: 1rem;
   }
@@ -255,7 +261,8 @@
 }
 
 @media screen and (max-width: 485px) {
-  .modal__content {
+  .modal__form--horizontal {
+    /* flips to a vertical layout when display is too small */
     flex-direction: column;
     align-items: center;
     gap: 12px;

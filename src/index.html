@@ -108,7 +108,7 @@
             <h2 class="modal__title">Edit profile</h2>
             <button type="button" class="modal__button--close"></button>
           </div>
-          <form class="modal__form" novalidate>
+          <form class="modal__form modal__form--vertical" novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -151,7 +151,7 @@
             <h2 class="modal__title">New Post</h2>
             <button type="button" class="modal__button--close"></button>
           </div>
-          <form class="modal__form" novalidate>
+          <form class="modal__form modal__form--vertical" novalidate>
             <label for="card-image-input" class="modal__label">
               Image link
               <input
@@ -204,7 +204,7 @@
             <h2 class="modal__title">Edit profile avatar</h2>
             <button type="button" class="modal__button--close"></button>
           </div>
-          <form class="modal__form" novalidate>
+          <form class="modal__form modal__form--vertical" novalidate>
             <label for="avatar-image-input" class="modal__label">
               Profile Picture
               <input
@@ -226,18 +226,18 @@
       <div class="modal" id="delete-post-modal">
         <div class="modal__container">
           <div class="modal__header">
-            <h2 class="modal__title modal__title--small">
+            <h2 class="modal__title modal__title--small modal__title--center">
               Are you sure you want to delete this image?
             </h2>
           </div>
-          <div class="modal__content">
-            <button class="modal__button modal__button--delete" type="button">
+          <form class="modal__form modal__form--horizontal">
+            <button class="modal__button modal__button--delete" type="submit">
               Delete
             </button>
             <button class="modal__button modal__button--cancel" type="button">
               Cancel
             </button>
-          </div>
+          </form>
           <button
             class="modal__button--close modal__button--theme-light"
             type="button"

@@ -70,7 +70,13 @@ const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector),
   );
+
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
+
+  // Skip validation setup for forms without inputs
+  if (inputList.length === 0 || !buttonElement) {
+    return;
+  }
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
