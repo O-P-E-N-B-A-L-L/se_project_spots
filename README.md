@@ -15,7 +15,6 @@ Currently, Spots only serves front-end, with UX in mind; additional functionalit
 Spots consists of two main sections:
 
 - Header
-
   - Nested flexbox for positioning simplicity
   - Media queries for altering layout on smaller devices
   - Comfortable text cutoff using clamp and text-overflow
@@ -43,7 +42,7 @@ Spots rendered within a 320px display:
 
 Check out this short [video demonstration](https://drive.google.com/file/d/1augVytaOpZlriFWEhCsoNoDkEMOR9AYm/view?usp=sharing) about the site and how it was made.
 
-Linked is my short [product pitch](https://drive.google.com/file/d/1S-zPKiIMQnuAg7edv9JqngniYKTdVXH1/view?usp=drive_link) for Spots, as well as some of the challenges I personally faced and how I was able to overcome them.
+Linked is my short [product pitch](https://drive.google.com/file/d/1PnOSc8Ac-RASgVE1Tu9YmPKjkVVMq78G/view?usp=sharing) for Spots, as well as some of the challenges I personally faced and how I was able to overcome them.
 
 ### See it for yourself!
 

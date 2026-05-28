@@ -6,10 +6,59 @@
   gap: 20px;
 }
 
+.profile__avatar-wrapper {
+  position: relative;
+}
+
 .profile__avatar-image {
   width: 190px;
   height: 190px;
   border-radius: 8px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.profile__edit-avatar-area {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 8px;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.profile__edit-avatar-area:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.profile__button--edit-avatar {
+  position: absolute;
+  bottom: 12px;
+  left: 39px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.profile__button--edit-avatar:hover {
+  cursor: pointer;
+}
+
+.profile__edit-avatar-icon {
+  color: #fff;
 }
 
 .profile__profile-wrapper {
@@ -54,13 +103,13 @@
   -webkit-box-orient: vertical;
 }
 
-.profile__edit-profile-button {
+.profile__button--edit-profile {
   border: none;
   background-color: transparent;
   padding: 0;
   width: fit-content;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 8px;
   text-decoration: none;
   font-size: 1rem;
@@ -71,12 +120,12 @@
   transition: opacity 0.2s ease;
 }
 
-.profile__edit-profile-button:hover {
+.profile__button--edit-profile:hover {
   opacity: 1;
   cursor: pointer;
 }
 
-.profile__new-post-button {
+.profile__button--new-post {
   background-color: #212121;
   font-size: 1rem;
   color: #fcf5e5;
@@ -93,12 +142,12 @@
   flex-shrink: 0;
 }
 
-.profile__new-post-button:hover {
+.profile__button--new-post:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.profile__new-post-button-icon {
+.profile__new-post-icon {
   width: 12px;
 }
 
@@ -109,13 +158,7 @@
     gap: 20px;
   }
 
-  .profile__avatar-wrapper {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile__avatar-image {
+  .profile__avatar-image .profile__edit-avatar-area {
     width: 80px;
     height: 80px;
   }
@@ -138,11 +181,11 @@
     text-align: center;
   }
 
-  .profile__edit-profile-button {
+  .profile__button--edit-profile {
     font-size: 1rem;
   }
 
-  .profile__new-post-button {
+  .profile__button--new-post {
     width: 100%;
   }
 }

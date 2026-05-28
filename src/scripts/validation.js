@@ -1,15 +1,15 @@
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-button",
-  inactiveButtonClass: "modal__submit-button_disabled",
+  submitButtonSelector: ".modal__button--submit",
+  inactiveButtonClass: "modal__button--disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error",
 };
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMessageElement = formElement.querySelector(
-    `#${inputElement.id}-error`
+    `#${inputElement.id}-error`,
   );
   inputElement.classList.add(config.inputErrorClass);
   errorMessageElement.textContent = errorMessage;
@@ -17,7 +17,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
 
 const hideInputError = (formElement, inputElement, config) => {
   const errorMessageElement = formElement.querySelector(
-    `#${inputElement.id}-error`
+    `#${inputElement.id}-error`,
   );
   inputElement.classList.remove(config.inputErrorClass);
   errorMessageElement.textContent = "";
@@ -59,7 +59,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
       formElement,
       inputElement,
       inputElement.validationMessage,
-      config
+      config,
     );
   } else {
     hideInputError(formElement, inputElement, config);
@@ -68,9 +68,15 @@ const checkInputValidity = (formElement, inputElement, config) => {
 
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
+    formElement.querySelectorAll(config.inputSelector),
   );
+
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
+
+  // Skip validation setup for forms without inputs
+  if (inputList.length === 0 || !buttonElement) {
+    return;
+  }
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
@@ -89,4 +95,4 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+export { settings, disableButtonState, enableValidation, resetValidation };
